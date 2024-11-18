@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extrados_ConsoleApp", "Extrados_ConsoleApp.csproj", "{56D7DECD-992B-43A0-A54E-B91616A51686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "..\DAO\DAO.csproj", "{1A5EE8B1-E5B4-4B4A-B8E7-91BD8A0F1E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "..\Entities\Entities.csproj", "{461EBC99-79BB-409C-B5B7-36A403706218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56D7DECD-992B-43A0-A54E-B91616A51686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D7DECD-992B-43A0-A54E-B91616A51686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D7DECD-992B-43A0-A54E-B91616A51686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D7DECD-992B-43A0-A54E-B91616A51686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5EE8B1-E5B4-4B4A-B8E7-91BD8A0F1E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5EE8B1-E5B4-4B4A-B8E7-91BD8A0F1E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5EE8B1-E5B4-4B4A-B8E7-91BD8A0F1E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5EE8B1-E5B4-4B4A-B8E7-91BD8A0F1E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461EBC99-79BB-409C-B5B7-36A403706218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461EBC99-79BB-409C-B5B7-36A403706218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461EBC99-79BB-409C-B5B7-36A403706218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461EBC99-79BB-409C-B5B7-36A403706218}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
