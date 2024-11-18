@@ -1,0 +1,7 @@
+{
+    "dotnet.defaultSolution": "Extrados_ConsoleApp.sln",
+    "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+}    
+}

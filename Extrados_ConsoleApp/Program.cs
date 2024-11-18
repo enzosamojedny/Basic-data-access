@@ -77,8 +77,9 @@ else if (result == 4)
         int edad = int.Parse(Console.ReadLine());
 
         var userUpdated = getUsers.UpdateUser(user.ID, nombre, edad);
-        //Console.WriteLine($"Usuario encontrado: ID: {user.ID}, Nombre: {userUpdated.Nombre}, Edad: {userUpdated.Edad}");
-        Console.WriteLine("usuario actualizado: ", userUpdated.ID, userUpdated.Nombre, userUpdated.Edad);
+
+        Console.WriteLine($"usuario actualizado: ID: {userUpdated.ID}, Nombre: {userUpdated.Nombre}, Edad: {userUpdated.Edad}");
+
         return;
     }
     catch (Exception exc)
