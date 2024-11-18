@@ -100,20 +100,33 @@
             if (userFound == null)
             {
                 Console.WriteLine("UserID es incorrecto");
-                throw new Exception();
+                throw new Exception("El usuario no existe.");
             }
+
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
 
-                using (MySqlCommand command = new MySqlCommand("UPDATE usuarios SET Nombre = @nombre, Edad = @edad WHERE ID = @id AND DELETED = 0", connection))
+                using (MySqlCommand updateCommand = new MySqlCommand("UPDATE usuarios SET Nombre = @nombre, Edad = @edad WHERE ID = @id AND DELETED = 0", connection))
                 {
-                    command.Parameters.AddWithValue("@nombre", nombre);
-                    command.Parameters.AddWithValue("@edad", edad);
-                    command.Parameters.AddWithValue("@id", userID);
-                    int rowsAffected = command.ExecuteNonQuery();
+                    updateCommand.Parameters.AddWithValue("@nombre", nombre);
+                    updateCommand.Parameters.AddWithValue("@edad", edad);
+                    updateCommand.Parameters.AddWithValue("@id", userID);
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        Console.WriteLine("No se pudo actualizar el usuario. Verifique el ID.");
+                        return null;
+                    }
+                }
+
+                using (MySqlCommand selectCommand = new MySqlCommand("SELECT Nombre, Edad FROM usuarios WHERE ID = @id AND DELETED = 0", connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@id", userID);
+
+                    using (MySqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         if (reader.Read())
                         {
@@ -121,7 +134,7 @@
                             {
                                 Nombre = reader.GetString("Nombre"),
                                 Edad = reader.GetInt32("Edad"),
-                                ID = userFound.ID
+                                ID = userID
                             };
                         }
                     }
@@ -129,5 +142,6 @@
             }
             return null;
         }
+
     }
 }
